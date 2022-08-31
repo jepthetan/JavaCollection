@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +21,11 @@ public class StreamMap {
 
     public List<String> mapLetter(List<Integer> numbers) {
 
-        return null;
+        List<String> mappedLetters = new ArrayList<>();
+        return numbers.stream().
+                map(number ->
+                ALPHABET.get(numbers.indexOf(number))).
+                collect(Collectors.toList());
 
     }
 
